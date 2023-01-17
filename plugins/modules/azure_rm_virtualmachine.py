@@ -1503,10 +1503,9 @@ class AzureRMVirtualMachine(AzureRMModuleBase):
 
                     # os disk
                     if self.managed_disk_type:
-                        print("hej hej haj")
                         vhd = None
                         managed_disk = self.compute_models.ManagedDiskParameters(storage_account_type=self.managed_disk_type,
-                                                                                 security_profile='DiskWithVMGuestState')
+                                                                                 security_profile=self.security_profile.get('security_encryption_type'))
                     elif custom_image:
                         vhd = None
                         managed_disk = None
