@@ -1710,6 +1710,7 @@ class AzureRMVirtualMachine(AzureRMModuleBase):
                             uefi_settings=uefi_settings_spec,
                             encryption_at_host=self.security_profile.get('encryption_at_host'),
                             security_type=self.security_profile.get('security_type'),
+                            security_encryption_type=self.security_profile.get('security_encryption_type'),
                         )
                         vm_resource.security_profile = security_profile
 
@@ -1892,6 +1893,7 @@ class AzureRMVirtualMachine(AzureRMModuleBase):
                             uefi_settings=uefi_settings_spec,
                             encryption_at_host=self.security_profile.get('encryption_at_host'),
                             security_type=self.security_profile.get('security_type'),
+                            security_encryption_type=self.security_profile.get('security_encryption_type'),
                         )
                         vm_resource.security_profile = security_profile
 
